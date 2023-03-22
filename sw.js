@@ -77,15 +77,3 @@ self.addEventListener('notificationclick', function (event) {
     clients.openWindow('https://maugayosso.github.io/tulancingo-pwa/')
   );
 });
-
-// PUSH NOTIFICATIONS
-
-button.addEventListener("click", () => {
-  Notification.requestPermission().then(permission => {
-    if (permission === "granted") {
-      console.log("The user accepted");
-    }
-  });
-});
-
-const notification = new Notification("Hello World!");
