@@ -56,24 +56,43 @@ navigator.setAppBadge(42).then(() => {
 
 // CONTROL CENTER NOTIFICATIONS
 
-self.addEventListener('push', function (event) {
+self.addEventListener('push', function(event) {
   console.log('[Service Worker] Push Received.');
 
-  var title = 'Primera notificacion';
-  var options = {
-    body: 'Prueba notificacion',
-    icon: '/tulancingo-pwa/static/icon.png',
-  };
+  // Solicitamos permiso para mostrar notificaciones
+  self.registration.showNotification('Título de la notificación', {
+    body: 'Texto de la notificación',
+    icon: 'ruta-al-icono.png',
+    badge: 'ruta-al-badge.png'
+  })
+  .then(function(showNotificationResponse) {
+    console.log('showNotificationResponse: ', showNotificationResponse);
+  })
+  .catch(function(error) {
+    console.error('Error al mostrar la notificación: ', error);
+  });
 
-  event.waitUntil(self.registration.showNotification(title, options));
-});
+  // Pedimos permiso para mostrar notificaciones
+  self.registration.showNotification('Título de la notificación', {
+    body: 'Texto de la notificación',
+    icon: 'ruta-al-icono.png',
+    badge: 'ruta-al-badge.png'
+  })
+  .then(function(showNotificationResponse) {
+    console.log('showNotificationResponse: ', showNotificationResponse);
 
-self.addEventListener('notificationclick', function (event) {
-  console.log('[Service Worker] Notification clicked.');
-
-  event.notification.close();
-
-  event.waitUntil(
-    clients.openWindow('https://maugayosso.github.io/tulancingo-pwa/')
-  );
+    // Solicitamos permiso para mostrar notificaciones
+    if (Notification.permission !== 'granted') {
+      Notification.requestPermission().then(function(permission) {
+        if (permission === 'granted') {
+          console.log('Permission granted!');
+        } else {
+          console.log('Permission denied.');
+        }
+      });
+    }
+  })
+  .catch(function(error) {
+    console.error('Error al mostrar la notificación: ', error);
+  });
 });
