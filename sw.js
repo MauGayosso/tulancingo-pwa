@@ -89,3 +89,11 @@ self.addEventListener('push', function (event) {
       console.error('Error al mostrar la notificación: ', error);
     });
 });
+
+function enviarNotificacion() {
+  self.registration.showNotification('Título de la notificación', {
+    body: 'Cuerpo de la notificación'
+  });
+}
+
+setInterval(enviarNotificacion, 60 * 1000);
