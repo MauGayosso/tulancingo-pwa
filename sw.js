@@ -50,13 +50,13 @@ navigator.setAppBadge();
 navigator.setAppBadge(69);
 
 // Push Notifications
-
+/*
 self.addEventListener('push', function (event) {
   console.log('[Service Worker] Push Received.');
 
   // Solicitamos permiso para mostrar notificaciones
   self.registration.showNotification('Primera notificacion', {
-    body: 'Funciona las notificaciones',
+    body: ' Funciona las notificaciones',
     icon: '/tulancingo-pwa/static/icon.png'
   })
     .then(function (showNotificationResponse) {
@@ -68,8 +68,7 @@ self.addEventListener('push', function (event) {
 
   // Pedimos permiso para mostrar notificaciones
   self.registration.showNotification('Permiso para mostrar notificacion', {
-    body: 'Permiso para mostrar notificacion',
-    icon: '/tulancingo-pwa/static/icon.png'
+    body: 'Permiso para mostrar notificacion'
   })
     .then(function (showNotificationResponse) {
       console.log('showNotificationResponse: ', showNotificationResponse);
@@ -89,11 +88,13 @@ self.addEventListener('push', function (event) {
       console.error('Error al mostrar la notificación: ', error);
     });
 });
-
+*/
 function enviarNotificacion() {
-  self.registration.showNotification('Título de la notificación', {
-    body: 'Cuerpo de la notificación'
-  });
+  if (Notification.permission === "granted") {
+    var notification = new Notification("Título de la notificación", {
+      body: "Cuerpo de la notificación",
+    });
+  }
 }
 
 setInterval(enviarNotificacion, 60 * 1000);
