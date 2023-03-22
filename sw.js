@@ -47,52 +47,45 @@ if (navigator.setAppBadge) {
 navigator.setAppBadge();
 
 // To display a number in the badge
+navigator.setAppBadge(69);
 
-navigator.setAppBadge(42).then(() => {
-  console.log("The badge was added");
-}).catch(e => {
-  console.error("Error displaying the badge", e);
-});
+// Push Notifications
 
-// CONTROL CENTER NOTIFICATIONS
-
-self.addEventListener('push', function(event) {
+self.addEventListener('push', function (event) {
   console.log('[Service Worker] Push Received.');
 
   // Solicitamos permiso para mostrar notificaciones
-  self.registration.showNotification('Título de la notificación', {
-    body: 'Texto de la notificación',
-    icon: 'ruta-al-icono.png',
-    badge: 'ruta-al-badge.png'
+  self.registration.showNotification('Primera notificacion', {
+    body: 'Funciona las notificaciones',
+    icon: '/tulancingo-pwa/static/icon.png'
   })
-  .then(function(showNotificationResponse) {
-    console.log('showNotificationResponse: ', showNotificationResponse);
-  })
-  .catch(function(error) {
-    console.error('Error al mostrar la notificación: ', error);
-  });
+    .then(function (showNotificationResponse) {
+      console.log('showNotificationResponse: ', showNotificationResponse);
+    })
+    .catch(function (error) {
+      console.error('Error al mostrar la notificación: ', error);
+    });
 
   // Pedimos permiso para mostrar notificaciones
-  self.registration.showNotification('Título de la notificación', {
-    body: 'Texto de la notificación',
-    icon: 'ruta-al-icono.png',
-    badge: 'ruta-al-badge.png'
+  self.registration.showNotification('Permiso para mostrar notificacion', {
+    body: 'Permiso para mostrar notificacion',
+    icon: '/tulancingo-pwa/static/icon.png'
   })
-  .then(function(showNotificationResponse) {
-    console.log('showNotificationResponse: ', showNotificationResponse);
+    .then(function (showNotificationResponse) {
+      console.log('showNotificationResponse: ', showNotificationResponse);
 
-    // Solicitamos permiso para mostrar notificaciones
-    if (Notification.permission !== 'granted') {
-      Notification.requestPermission().then(function(permission) {
-        if (permission === 'granted') {
-          console.log('Permission granted!');
-        } else {
-          console.log('Permission denied.');
-        }
-      });
-    }
-  })
-  .catch(function(error) {
-    console.error('Error al mostrar la notificación: ', error);
-  });
+      // Solicitamos permiso para mostrar notificaciones
+      if (Notification.permission !== 'granted') {
+        Notification.requestPermission().then(function (permission) {
+          if (permission === 'granted') {
+            console.log('Permission granted!');
+          } else {
+            console.log('Permission denied.');
+          }
+        });
+      }
+    })
+    .catch(function (error) {
+      console.error('Error al mostrar la notificación: ', error);
+    });
 });
