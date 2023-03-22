@@ -1,0 +1,29 @@
+{
+    "id" : "com.tulancingopeligro",
+    "name": "TulancingoPeligro",
+    "short_name": "TulPeligro",
+    "description": "Indice de peligro en Tulancingo",
+    "categories": "news",
+    "start_url": "/index.html",
+    "background_color" : "#fdfdfd",
+    "theme_color" : "#db4938",
+    "display": "standalone",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "static/144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "static/192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "static/512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
