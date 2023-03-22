@@ -1,6 +1,6 @@
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
-      navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      navigator.serviceWorker.register('/tulancingo-pwa/sw.js').then(function(registration) {
         console.log('ServiceWorker registrado con éxito: ', registration.scope);
       }, function(err) {
         console.log('Error en el registro de ServiceWorker: ', err);
@@ -14,9 +14,9 @@ if ('serviceWorker' in navigator) {
     event.waitUntil(
       caches.open('cache-v1').then(function(cache) {
         return cache.addAll([
-          '/',
-          '/index.html',
-          '/css/style.css',
+          '/tulancingo-pwa',
+          '/tulancingo-pwa/index.html',
+          '/tulancingo-pwa/css/style.css',
         ]);
       })
     );

@@ -4,7 +4,7 @@
     "short_name": "TulPeligro",
     "description": "Indice de peligro en Tulancingo",
     "categories": "news",
-    "start_url": "/index.html",
+    "start_url": "https://maugayosso.github.io/tulancingo-pwa/",
     "background_color" : "#fdfdfd",
     "theme_color" : "#db4938",
     "display": "standalone",
