@@ -92,8 +92,8 @@ self.addEventListener('push', function (event) {
 
 function enviarNotificacion() {
   if (Notification.permission === "granted") {
-    var notification = new Notification("Título de la notificación", {
-      body: "Cuerpo de la notificación",
+    var notification = new Notification("NOTIFICACION PRUEBA", {
+      body: "Esta es una notificacion de prueba uwu",
     })
   }
 }
