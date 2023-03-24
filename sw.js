@@ -94,6 +94,7 @@ function enviarNotificacion() {
   if (Notification.permission === "granted") {
     var notification = new Notification("NOTIFICACION PRUEBA", {
       body: "Esta es una notificacion de prueba uwu",
+      icon : "/tulancingo-pwa/static/icon.png"
     })
   }
 }
