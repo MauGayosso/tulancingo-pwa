@@ -6,7 +6,7 @@
     "categories": "news",
     "start_url": "https://maugayosso.github.io/tulancingo-pwa/",
     "background_color" : "#fdfdfd",
-    "theme_color" : "#db4938",
+    "theme_color" : "#900C3F",
     "display": "standalone",
     "orientation": "any",
     "icons": [
