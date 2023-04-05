@@ -9,7 +9,7 @@
     "theme_color" : "#900C3F",
     "display": "standalone",
     "orientation": "any",
-    "display_override" : ["window-controls-overlay","minimal-ui"]
+    "display_override" : ["window-controls-overlay","minimal-ui"],
     "icons": [
         {
             "src": "static/144.png",
