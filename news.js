@@ -7,9 +7,7 @@ let noticias = {
     "apiKey":"7a2b782a757e4dd29a09bb415ee72659",
     fetchNoticias:function(categoria){
         fetch(
-            "https://newsapi.org/v2/everything?q="
-            +categoria+
-            "&languaje=es&apiKey="+this.apiKey
+            "https://newsapi.org/v2/top-headlines?country=mx&apiKey="+this.apiKey
         )
         .then((response)=>response.json())
         .then((data)=>this.displayNoticias(data));
