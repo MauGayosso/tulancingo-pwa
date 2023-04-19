@@ -154,7 +154,7 @@ async function initMap() {
     });
     // Crea la ventana de información
     var infowindow = new google.maps.InfoWindow({
-      content: markers[i].content,
+      content: '<a href="'+markers[i].content+'">'+markers[i].title+'</a>'
     });
 
     // Crea una función de cierre para pasar la referencia correcta al evento click
