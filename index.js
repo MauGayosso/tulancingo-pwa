@@ -35,6 +35,41 @@ var markers = [
     position: {lat: 20.053663, lng: -98.717538},
     content: 
     'Huye perra'
+  },
+  {
+    title: "Suicidio",
+    position:{lat:20.0500877,lng:-98.3378842},
+    content : 'https://www.elsoldetulancingo.com.mx/policiaca/menor-se-quito-la-vida-en-cuautepec-9936188.html'
+  },
+  {
+    title: "Robo",
+    position:{lat:20.0806518, lng:-98.3694567},
+    content : 'https://www.noticiastulancingo.com/detienen-a-uno-por-robo-en-dulces-cravioto-en-el-centro-de-tulancingo/'
+  },
+  {
+    title: "Narcomenudeo",
+    position : {lat:20.0554348,lng:-98.3522486},
+    content: 'https://www.noticiastulancingo.com/dictan-prision-preventiva-a-cuatro-sujetos-por-narcomenudeo-en-cuautepec/'
+  },
+  {
+    title : "Incendio",
+    position : {lat:20.0709417,lng:-98.3944257},
+    content : 'https://www.facebook.com/reel/200716696071057'
+  },
+  {
+    title : "Asesinato",
+    position : {lat:20.0225924,lng:-98.2038383},
+    content : 'https://www.elsoldetulancingo.com.mx/policiaca/ejecutan-a-dos-dentro-de-una-camioneta-en-cuautepec-9926831.html'
+  },
+  {
+    title : "Accidente Automovilistico",
+    position : {lat:20.0836897,lng:-98.3788405},
+    content : 'https://www.elsoldetulancingo.com.mx/policiaca/choca-su-auto-contra-poste-y-se-da-a-la-fuga-9934066.html'
+  },
+  {
+    title : "Campaña de Salud",
+    position : {lat:20.1057283,lng:-98.3864503},
+    content : 'https://www.ultranoticias.com.mx/theme-features/hidalgo-portada/panorama-general-hidalgo/item/121833-se-abre-la-convocatoria-respectiva-para-participar-%20.html'
   }
 ];
 var map;
