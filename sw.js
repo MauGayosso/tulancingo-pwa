@@ -92,8 +92,8 @@ self.addEventListener('push', function (event) {
 
 function enviarNotificacion() {
   if (Notification.permission === "granted") {
-    var notification = new Notification("NOTIFICACION PRUEBA", {
-      body: "Esta es una notificacion de prueba uwu",
+    var notification = new Notification("¡ALERTA!", {
+      body: "Ingresa para ver las nuevas actualizaciones",
       icon : "/tulancingo-pwa/static/icon.png"
     })
   }
