@@ -3,7 +3,7 @@ var zoomStart = 13;
 var moreZoom = 18;
 var disableDefaultUI = true;
 var user;
-var proximityThreshold = 6; // en kilómetros
+var proximityThreshold = 400; // en kilómetros
 
 var dangerousDistance = proximityThreshold * .01;
 
@@ -81,6 +81,13 @@ function addMarker(user_latitude, user_longitude) {
       map: map,
       icon: "./static/user.png",
       title: "You",
+      clickable: true,
+    });
+    markerNearUser = new google.maps.Marker({
+      position: { lat: user_latitude-0.000099, lng: user_longitude },
+      map: map,
+      icon: "./static/error.png",
+      title: "near you",
       clickable: true,
     });
     var infowindow = new google.maps.InfoWindow({

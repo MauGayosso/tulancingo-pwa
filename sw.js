@@ -17,6 +17,7 @@ self.addEventListener('install', function (event) {
         '/tulancingo-pwa',
         '/tulancingo-pwa/index.html',
         '/tulancingo-pwa/css/style.css',
+        '/tulancingo-pwa/js/index.js',
       ]);
     })
   );
@@ -48,54 +49,3 @@ navigator.setAppBadge();
 
 // To display a number in the badge
 navigator.setAppBadge(69);
-
-// Push Notifications
-/*
-self.addEventListener('push', function (event) {
-  console.log('[Service Worker] Push Received.');
-
-  // Solicitamos permiso para mostrar notificaciones
-  self.registration.showNotification('Primera notificacion', {
-    body: ' Funciona las notificaciones',
-    icon: '/tulancingo-pwa/static/icon.png'
-  })
-    .then(function (showNotificationResponse) {
-      console.log('showNotificationResponse: ', showNotificationResponse);
-    })
-    .catch(function (error) {
-      console.error('Error al mostrar la notificación: ', error);
-    });
-
-  // Pedimos permiso para mostrar notificaciones
-  self.registration.showNotification('Permiso para mostrar notificacion', {
-    body: 'Permiso para mostrar notificacion'
-  })
-    .then(function (showNotificationResponse) {
-      console.log('showNotificationResponse: ', showNotificationResponse);
-
-      // Solicitamos permiso para mostrar notificaciones
-      if (Notification.permission !== 'granted') {
-        Notification.requestPermission().then(function (permission) {
-          if (permission === 'granted') {
-            console.log('Permission granted!');
-          } else {
-            console.log('Permission denied.');
-          }
-        });
-      }
-    })
-    .catch(function (error) {
-      console.error('Error al mostrar la notificación: ', error);
-    });
-});
-*/
-
-function enviarNotificacion() {
-  if (Notification.permission === "granted") {
-    var notification = new Notification("¡ALERTA!", {
-      body: "Ingresa para ver las nuevas actualizaciones",
-      icon : "/tulancingo-pwa/static/icon.png"
-    })
-  }
-}
-setInterval(enviarNotificacion, 60 * 1000);
